@@ -1,0 +1,404 @@
+/* Réinitialisation simple */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #1F2937; /* Couleur de texte par défaut pour les sections claires */
+    display: flex; /* Permet au footer de rester en bas */
+    flex-direction: column; /* Empile les éléments verticalement */
+    min-height: 100vh; /* Assure que le body prend au moins toute la hauteur de l'écran */
+}
+
+main {
+    flex-grow: 1; /* Permet au main de prendre l'espace disponible */
+}
+
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1, h2, h3 {
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+img { /* Assure que les images ne débordent pas */
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 1000px; /* Largeur max ajustée */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ----- Header ----- */
+.header {
+    background-color: #1F2937;
+    padding: 15px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Pour mobile */
+    gap: 10px; /* Espace si ça wrap */
+}
+
+.logo {
+    font-size: 24px;
+    color: #F9FAF8;
+    font-weight: bold; /* Poids standard pour un logo */
+}
+
+.main-nav ul {
+    display: flex;
+    flex-wrap: wrap; /* Pour mobile */
+    gap: 10px 20px; /* Espace vertical et horizontal */
+}
+
+.main-nav ul li a {
+    font-size: 18px;
+    color: #E5E7EB;
+    /* Ajout de la transition pour un effet plus doux */
+    transition: color 0.3s ease, text-decoration-color 0.3s ease;
+    /* Optionnel: définir la couleur initiale du soulignement */
+    text-decoration: underline;
+    text-decoration-color: transparent; /* Cache le soulignement initialement */
+    text-underline-offset: 4px; /* Espace entre texte et soulignement */
+}
+
+.main-nav ul li a:hover {
+    /* Applique le soulignement au survol */
+    text-decoration-color: #E5E7EB; /* Rend le soulignement visible avec la couleur du texte */
+    /* Optionnel: changer aussi la couleur du texte */
+    /* color: #FFF; */
+}
+
+/* ----- Hero Section ----- */
+.hero {
+    background-color: #1F2937;
+    color: #F9FAF8;
+    padding: 80px 0; /* Plus d'espace vertical */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1; /* Prend la moitié de l'espace */
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 900; /* Extra Bold/Black */
+    color: #F9FAF8;
+    margin-bottom: 5px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #E5E7EB;
+    margin-bottom: 15px;
+}
+
+.hero-image-placeholder {
+    flex: 1; /* Prend l'autre moitié */
+    height: 230px; /* Hauteur indicative */
+    background-color: #6d747d; /* Couleur grise pour le placeholder */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #E5E7EB;
+    font-size: 14px;
+}
+
+/* ----- Boutons ----- */
+.btn {
+    display: inline-block;
+    padding: 8px 30px; /* Ajustement padding */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px; /* Taille de police indicative */
+    font-weight: bold; /* Boutons souvent en gras */
+    /* Transition plus spécifique pour l'opacité et le fond */
+    transition: opacity 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-primary {
+    background-color: #3882F6;
+    color: #F9FAF8;
+}
+
+.btn-secondary {
+    background-color: #3882F6; /* Fond bleu comme demandé */
+    color: #F9FAF8;
+    border: 2px solid #F9FAF8; /* Bordure blanche */
+}
+
+.btn:hover {
+    opacity: 0.85; /* Effet général léger */
+}
+
+/* Effet spécifique pour le bouton secondaire au survol (plus visible) */
+.btn-secondary:hover {
+     background-color: #F9FAF8; /* Inverse: fond blanc */
+     color: #3882F6; /* Texte bleu */
+     border-color: #F9FAF8; /* Garde la bordure blanche */
+     opacity: 1; /* Annule l'opacité générale pour cet effet spécifique */
+}
+
+/* ----- Information Section ----- */
+.information {
+    padding: 60px 0 80px 0; /* Plus d'espace en bas */
+    text-align: center;
+}
+
+.information h2 {
+    font-size: 36px;
+    font-weight: 900; /* Extra Bold/Black */
+    color: #1F2937;
+    margin-bottom: 40px;
+}
+
+.info-cards {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Espace entre les cartes */
+    flex-wrap: wrap; /* Pour responsivité */
+}
+
+.card {
+    width: 160px; /* Largeur indicative */
+    text-align: center;
+}
+
+.card-image-placeholder {
+    height: 160px;
+    width: 160px;
+    border: 4px solid #3882F6; /* Bordure bleue */
+    border-radius: 15px; /* Coins arrondis */
+    margin: 0 auto 10px auto;
+    background-color: #f0f0f0; /* Fond clair pour le placeholder */
+}
+
+.card p {
+    font-size: 16px; /* Taille de police ajustée */
+    color: #555; /* Gris moyen pour le texte sous l'image */
+    padding: 0 5px; /* Evite que le texte touche les bords sur mobile */
+}
+
+/* ----- Quote Section ----- */
+.quote {
+    background-color: #E5E7EB;
+    color: #1F2937;
+    padding: 100px 0; /* Beaucoup d'espace vertical */
+}
+
+.quote blockquote {
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.quote blockquote p {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: 300; /* Light */
+    color: #1F2937;
+    margin-bottom: 10px;
+}
+
+.quote blockquote cite {
+    display: block;
+    text-align: right;
+    font-size: 20px; /* Plus petit que la citation */
+    font-weight: bold; /* Mise en évidence */
+    color: #1F2937;
+}
+
+/* ----- Call to Action Section ----- */
+.cta {
+    padding: 60px 0; /* Espace avant et après */
+}
+
+.cta-box { /* C'est le container qui a le fond bleu */
+    background-color: #3882F6;
+    color: #F9FAF8;
+    border-radius: 8px;
+    padding: 40px 60px; /* Espacement interne généreux */
+}
+
+.cta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Responsivité */
+    gap: 20px; /* Espace entre texte et bouton */
+}
+
+.cta-text {
+    flex: 1; /* Prend plus de place si possible */
+    min-width: 250px; /* Evite que le texte soit trop écrasé */
+}
+
+.cta-text h3 {
+    font-size: 22px; /* Taille ajustée */
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #F9FAF8;
+}
+
+.cta-text p {
+    font-size: 16px; /* Taille ajustée */
+    color: #E5E7EB; /* Légèrement moins blanc */
+}
+
+/* ----- Footer ----- */
+.footer {
+    background-color: #1F2937;
+    color: #E5E7EB; /* Couleur secondaire */
+    text-align: center;
+    padding: 30px 0; /* Espace ajusté */
+    margin-top: auto; /* Pousse le footer en bas si le contenu est court */
+}
+
+.footer p {
+    font-size: 14px; /* Petit texte pour le copyright */
+}
+
+
+/* ----- Media Queries pour Tablette et Mobile ----- */
+
+/* Tablette (~768px et moins) */
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column; /* Empile texte et image */
+        text-align: center; /* Centre le texte quand empilé */
+    }
+
+    .hero-text {
+        margin-bottom: 30px; /* Espace sous le texte */
+    }
+
+    .info-cards {
+        gap: 30px; /* Réduit l'espace */
+    }
+
+    .card {
+        width: calc(50% - 20px); /* 2 cartes par ligne */
+        margin-bottom: 20px;
+    }
+
+    .quote blockquote p {
+        font-size: 28px; /* Réduit la taille de la citation */
+    }
+     .quote blockquote cite {
+        font-size: 18px;
+    }
+
+    .cta-content {
+        justify-content: center; /* Centre les éléments quand empilés */
+        text-align: center;
+    }
+     .cta-text {
+        margin-bottom: 20px;
+    }
+     .cta-box {
+         padding: 30px 40px;
+     }
+}
+
+/* Mobile (~480px et moins) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px; /* Réduit le padding latéral */
+    }
+
+     .header .container {
+        flex-direction: column; /* Empile logo et nav */
+        align-items: center; /* Centre les éléments */
+        gap: 15px;
+    }
+    .main-nav ul {
+         justify-content: center; /* Centre les liens */
+         gap: 5px 15px; /* Réduit l'espacement entre les liens */
+     }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero h1 {
+        font-size: 36px; /* Réduit la taille du titre principal */
+    }
+    .hero p {
+        font-size: 16px;
+    }
+     .hero-image-placeholder {
+        height: 180px;
+        width: 90%; /* Prend presque toute la largeur */
+        max-width: 300px; /* Limite la largeur max */
+        margin: 0 auto; /* Centre le placeholder */
+        flex: none; /* Annule le flex: 1 */
+    }
+     .hero-content {
+         gap: 30px; /* Réduit l'espace entre texte et image */
+     }
+
+
+    .information h2 {
+        font-size: 28px; /* Réduit taille titre info */
+    }
+    .card {
+        width: 80%; /* Une carte par ligne, plus large */
+        max-width: 200px; /* Mais pas trop large non plus */
+    }
+     .card-image-placeholder {
+         width: 100%; /* Prend toute la largeur de la carte */
+         max-width: 160px; /* Garde la taille max */
+         height: auto; /* Hauteur auto */
+         aspect-ratio: 1 / 1; /* Garde le carré */
+     }
+
+
+     .quote {
+        padding: 60px 0;
+    }
+    .quote blockquote p {
+        font-size: 22px; /* Réduit encore la citation */
+    }
+     .quote blockquote cite {
+        font-size: 16px;
+    }
+
+     .cta-box {
+         padding: 25px 20px; /* Réduit padding interne */
+     }
+     .cta-text h3 {
+         font-size: 20px;
+     }
+      .cta-text p {
+         font-size: 15px;
+     }
+      .btn { /* Ajuste taille bouton sur mobile */
+        padding: 8px 20px;
+        font-size: 15px;
+    }
+}
